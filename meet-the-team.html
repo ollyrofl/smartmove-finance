@@ -306,15 +306,22 @@
       }
     }
     @media (max-width: 768px) {
-      .team-section,
+      .team-section {
+        padding: 20px 0 72px;
+      }
       .team-values {
         padding: 72px 0;
+      }
+      .team-grid-brokers {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
       .team-page-intro {
         padding: 44px 0 0;
       }
       .team-page-header {
-        margin-bottom: 32px;
+        margin-bottom: 20px;
         padding-bottom: 24px;
       }
       .team-cta {
@@ -324,13 +331,13 @@
         padding: 24px;
       }
       .team-broker-awards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        padding: 18px 14px;
-        gap: 12px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        padding: 16px 12px;
+        gap: 10px;
       }
       .team-award-badge {
-        width: 68px;
-        height: 68px;
+        width: 54px;
+        height: 54px;
       }
       .team-cta-inner {
         padding: 36px 24px;
@@ -340,6 +347,13 @@
       .team-page-intro {
         padding: 36px 0 0;
       }
+      .team-page-header {
+        margin-bottom: 16px;
+        padding-bottom: 18px;
+      }
+      .team-section {
+        padding: 12px 0 56px;
+      }
       .team-page-header p,
       .team-section-header p,
       .team-card p,
@@ -347,30 +361,48 @@
       .team-cta-inner p {
         font-size: .92rem;
       }
-      .team-card,
+      .team-card:not(.team-card-broker),
       .team-value-card {
         padding: 22px;
       }
+      .team-card-broker {
+        padding: 0;
+        border-radius: 22px;
+      }
       .team-card-top {
-        align-items: flex-start;
-        flex-direction: column;
+        align-items: center;
+        flex-direction: row;
       }
       .team-avatar {
-        width: 96px;
-        height: 96px;
-        border-radius: 24px;
+        width: 88px;
+        height: 88px;
+        border-radius: 22px;
+        flex-shrink: 0;
       }
       .team-broker-content {
         padding: 22px;
       }
+      .team-grid-admin {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .team-tier {
+        gap: 16px;
+      }
+      .team-tier-header {
+        padding-bottom: 12px;
+      }
       .team-broker-awards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-        padding: 16px 12px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        padding: 14px 10px;
       }
       .team-award-badge {
-        width: 62px;
-        height: 62px;
+        width: 46px;
+        height: 46px;
+      }
+      .team-card h3 {
+        font-size: 1.15rem;
       }
       .team-point {
         grid-template-columns: 1fr;
@@ -750,8 +782,33 @@
 </footer>
 
 <script>
-  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  function initMobileMenuAccordions() {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    const groups = menu.querySelectorAll(':scope > details');
+    groups.forEach((group) => {
+      group.addEventListener('toggle', () => {
+        if (!group.open) return;
+        groups.forEach((other) => {
+          if (other !== group) other.open = false;
+        });
+      });
+    });
+  }
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    menu.classList.toggle('open');
+  }
+  function closeMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    menu.classList.remove('open');
+    menu.querySelectorAll(':scope > details[open]').forEach((group) => {
+      group.open = false;
+    });
+  }
+  initMobileMenuAccordions()
   function handleSubmit(e) { e.preventDefault(); const btn = e.target.querySelector('button[type=\"submit\"]'); if (!btn) return; btn.textContent = 'Enquiry sent. We will be in touch soon'; btn.style.background = '#3aaea0'; btn.disabled = true; }
 </script>
 </body>

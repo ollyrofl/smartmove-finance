@@ -759,8 +759,25 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .container { padding: 0 24px; }
-  .nav-links, .nav-right { display: none; }
-  .hamburger { display: flex; }
+  .nav-links { display: none; }
+  .nav-inner {
+    justify-content: flex-start;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+  }
+  .nav-right .btn { display: none; }
+  .nav-call-menu summary {
+    width: 38px;
+    height: 38px;
+  }
+  .hamburger {
+    display: flex;
+    margin-left: 6px;
+  }
   .calc-layout { grid-template-columns: 1fr; }
   .calc-sidebar { order: 2; }
   .calc-widget { order: 1; }

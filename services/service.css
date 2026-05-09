@@ -898,8 +898,25 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .container { padding: 0 24px; }
-  .nav-links, .nav-right { display: none; }
-  .hamburger { display: flex; }
+  .nav-links { display: none; }
+  .nav-inner {
+    justify-content: flex-start;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+  }
+  .nav-right .btn { display: none; }
+  .nav-call-menu summary {
+    width: 38px;
+    height: 38px;
+  }
+  .hamburger {
+    display: flex;
+    margin-left: 6px;
+  }
   .service-hero-shell { grid-template-columns: 1fr; gap: 28px; }
   .service-hero-copy { padding: 72px 0 0; }
   .service-hero-media { min-height: 360px; }
@@ -937,6 +954,18 @@ footer {
     width: 100%;
     justify-content: center;
     text-align: center;
+  }
+  .service-hero-actions .call-cta-menu,
+  .service-cta-actions .call-cta-menu,
+  .team-cta-actions .call-cta-menu,
+  .referrers-actions .call-cta-menu {
+    width: 100%;
+  }
+  .service-hero-actions .call-cta-menu summary,
+  .service-cta-actions .call-cta-menu summary,
+  .team-cta-actions .call-cta-menu summary,
+  .referrers-actions .call-cta-menu summary {
+    width: 100%;
   }
   .sidebar-card,
   .feature-card,

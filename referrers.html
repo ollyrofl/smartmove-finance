@@ -62,6 +62,18 @@
       flex-wrap: wrap;
       margin-top: 24px;
     }
+    .referrers-actions .btn,
+    .referrers-actions .call-cta-menu {
+      flex: 1 1 240px;
+    }
+    .referrers-actions .btn {
+      text-align: center;
+      justify-content: center;
+    }
+    .referrers-actions .call-cta-menu summary {
+      width: 100%;
+      justify-content: center;
+    }
     .referrers-panel {
       background: rgba(9, 39, 37, 0.34);
       border: 1px solid rgba(255,255,255,0.18);
@@ -271,9 +283,7 @@
         grid-template-columns: 1fr;
       }
       .referrers-hero::before {
-        width: 100%;
-        right: 0;
-        background-position: 58% center;
+        content: none;
       }
     }
     @media (max-width: 640px) {
@@ -286,9 +296,6 @@
         width: 48px;
         height: 48px;
         border-radius: 16px;
-      }
-      .referrers-hero::before {
-        background-position: 62% center;
       }
     }
     @media (max-width: 540px) {
@@ -635,8 +642,33 @@
 </footer>
 
 <script>
-  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  function initMobileMenuAccordions() {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    const groups = menu.querySelectorAll(':scope > details');
+    groups.forEach((group) => {
+      group.addEventListener('toggle', () => {
+        if (!group.open) return;
+        groups.forEach((other) => {
+          if (other !== group) other.open = false;
+        });
+      });
+    });
+  }
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    menu.classList.toggle('open');
+  }
+  function closeMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    menu.classList.remove('open');
+    menu.querySelectorAll(':scope > details[open]').forEach((group) => {
+      group.open = false;
+    });
+  }
+  initMobileMenuAccordions()
   function handleSubmit(e) { e.preventDefault(); const btn = e.target.querySelector('button[type=\"submit\"]'); if (!btn) return; btn.textContent = 'Enquiry sent. We will be in touch soon'; btn.style.background = '#3aaea0'; btn.disabled = true; }
 </script>
 </body>

@@ -429,8 +429,33 @@
 </footer>
 
 <script>
-  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  function initMobileMenuAccordions() {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    const groups = menu.querySelectorAll(':scope > details');
+    groups.forEach((group) => {
+      group.addEventListener('toggle', () => {
+        if (!group.open) return;
+        groups.forEach((other) => {
+          if (other !== group) other.open = false;
+        });
+      });
+    });
+  }
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    menu.classList.toggle('open');
+  }
+  function closeMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    menu.classList.remove('open');
+    menu.querySelectorAll(':scope > details[open]').forEach((group) => {
+      group.open = false;
+    });
+  }
+  initMobileMenuAccordions()
 function handleSubmit(e) { e.preventDefault(); const btn = e.target.querySelector('button[type=\"submit\"]'); if (!btn) return; btn.textContent = 'Enquiry sent. We will be in touch soon'; btn.style.background = '#3aaea0'; btn.disabled = true; }
 </script>
 </body>
