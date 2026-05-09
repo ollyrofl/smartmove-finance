@@ -307,10 +307,10 @@
       transform: translateY(0);
       transition-delay: 0s;
     }
-    .nav-dropdown-wide .nav-dd-panel { min-width: 400px; }
+    .nav-dropdown-wide .nav-dd-panel { min-width: 420px; padding-bottom: 16px; }
     .nav-dropdown-right { left: auto; right: 0; }
-    .nav-dd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-    .nav-dd-col { display: flex; flex-direction: column; gap: 2px; }
+    .nav-dd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+    .nav-dd-col { display: flex; flex-direction: column; gap: 4px; }
     .nav-dd-link {
       display: flex; align-items: flex-start; gap: 10px;
       padding: 9px 10px; border-radius: 10px;
@@ -421,6 +421,15 @@
     .mobile-submenu {
       display: grid;
       gap: 8px;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      padding: 0 10px;
+      transition: max-height .28s ease, opacity .18s ease, padding .18s ease;
+    }
+    .mobile-menu details[open] .mobile-submenu {
+      max-height: 360px;
+      opacity: 1;
       padding: 0 10px 10px;
     }
     .mobile-submenu a {
@@ -1145,6 +1154,34 @@
     }
     .cta-band-text p em { font-style: normal; font-weight: 300; color: rgba(255,255,255,.5); }
     .cta-band-actions { display: flex; gap: 12px; flex-shrink: 0; }
+    .cta-band-actions .call-cta-menu {
+      align-self: stretch;
+    }
+    .cta-band-actions .call-cta-menu summary {
+      width: auto;
+      min-width: 0;
+      height: 100%;
+      min-height: 46px;
+      padding: 14px 32px;
+      line-height: normal;
+      border-radius: 6px;
+      border-color: rgba(255,255,255,.2);
+      background: transparent;
+      color: rgba(255,255,255,.6);
+      box-sizing: border-box;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .cta-band-actions .call-cta-menu summary:hover,
+    .cta-band-actions .call-cta-menu[open] summary {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.34);
+      color: #fff;
+      transform: none;
+    }
 
     /* ── CONTACT ── */
     .contact { background: var(--off); border-top: 1px solid var(--border); }
@@ -2155,7 +2192,21 @@
       </div>
       <div class="cta-band-actions">
         <a href="#contact" class="btn btn-white">Get in Touch with an Expert</a>
-        <a href="tel:0425709315" class="btn btn-outline" style="border-color:rgba(255,255,255,.2); color:rgba(255,255,255,.6);">0425 709 315</a>
+        <details class="nav-call-menu call-cta-menu">
+          <summary aria-label="Choose a broker to call" class="btn btn-outline">
+            Call Us
+          </summary>
+          <div class="nav-call-panel">
+            <a class="nav-call-option" href="tel:0425709315">
+              <span class="nav-call-name">Vikram</span>
+              <span class="nav-call-number">0425 709 315</span>
+            </a>
+            <a class="nav-call-option" href="tel:0424304323">
+              <span class="nav-call-name">Atul</span>
+              <span class="nav-call-number">0424 304 323</span>
+            </a>
+          </div>
+        </details>
       </div>
     </div>
   </div>
