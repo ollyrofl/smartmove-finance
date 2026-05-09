@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smartmove Finance | Mortgage Broking</title>
+  <meta name="description" content="Smartmove Finance - expert mortgage broking to help you secure the best home loan for your situation." />
+  <link rel="icon" type="image/png" href="smartmovefinanceemblem.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="assets/page-transition.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Sora', sans-serif;
+      font-weight: 400;
+      background: #fff;
+      color: #1e7a70;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :root {
+      --navy:    #1e7a70;
+      --navy2:   #165f57;
+      --teal:    #3aaea0;
+      --white:   #ffffff;
+      --off:     #f2faf9;
+      --mid:     #6b7280;
+      --border:  rgba(30,122,112,.15);
+      --serif:   'Sora', sans-serif;
+      --sans:    'Sora', sans-serif;
+    }
+
+    /* ── PROGRESS BAR ── */
+    #nprogress {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--navy); z-index: 9999;
+      animation: progress 1.2s ease forwards;
+    }
+    @keyframes progress { from { width: 0 } to { width: 100% } }
+
+    /* ── UTILITIES ── */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+    .serif { font-family: var(--serif); }
+
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    .btn {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      transition: all .15s;
+      border: 1px solid transparent;
+      border-radius: 6px;
+    }
+    .btn-dark { background: var(--navy); color: #fff; }
+    .btn-dark:hover { background: var(--navy2); }
+    .btn-outline { background: transparent; border-color: var(--navy); color: var(--navy); }
+    .btn-outline:hover { background: var(--navy); color: #fff; }
+    .btn-white { background: #fff; color: var(--navy); border-color: #fff; }
+    .btn-white:hover { background: var(--off); }
+
+    .label-tag {
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3, .display {
+      font-family: var(--serif);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container { max-width: 1240px; }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+      gap: 8px;
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo-mark {
+      width: 36px; height: 36px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .nav-logo-mark::before {
+      content: 'SM';
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: -.5px;
+    }
+    .nav-logo-bubble {
+      position: absolute;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .nav-logo-b1 { width: 8px; height: 8px; top: -4px; right: -3px; opacity: .8; }
+    .nav-logo-b2 { width: 5px; height: 5px; top: -10px; right: 2px; opacity: .5; }
+    .nav-wordmark {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: .04em;
+      color: var(--navy);
+    }
+    .nav-wordmark span {
+      color: var(--teal);
+      font-weight: 400;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+    .nav-links > li { position: relative; }
+    .nav-links > li > a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 16px;
+      height: 68px;
+      line-height: 68px;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      transition: color .15s;
+      white-space: nowrap;
+    }
+    .nav-links > li > a:hover { color: var(--teal); }
+
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-call-menu {
+      position: relative;
+    }
+    .nav-call-menu summary {
+      list-style: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--navy);
+      background: var(--navy);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .15s, border-color .15s, color .15s, transform .15s;
+    }
+    .nav-call-menu summary::-webkit-details-marker { display: none; }
+    .nav-call-menu summary:hover {
+      background: var(--navy2);
+      border-color: var(--navy2);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .nav-call-menu[open] summary {
+      background: var(--navy2);
+      border-color: var(--navy2);
+      color: #fff;
+    }
+    .nav-call-panel {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 240px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(13, 54, 49, 0.97);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid rgba(58,174,160,0.2);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px) scale(.98);
+      transform-origin: top right;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+    }
+    .nav-call-menu[open] .nav-call-panel {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+      transition-delay: 0s;
+    }
+    .nav-call-option {
+      display: grid;
+      gap: 2px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: #fff;
+      transition: background .12s ease;
+    }
+    .nav-call-option + .nav-call-option {
+      margin-top: 4px;
+    }
+    .nav-call-option:hover {
+      background: rgba(255,255,255,0.08);
+    }
+    .nav-call-name {
+      font-size: .8rem;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    .nav-call-number {
+      font-size: .7rem;
+      letter-spacing: .06em;
+      color: rgba(255,255,255,0.56);
+    }
+    .call-cta-menu {
+      position: relative;
+      flex-shrink: 0;
+      display: inline-flex;
+    }
+    .why-cta .call-cta-menu summary {
+      width: auto;
+      min-width: 0;
+      height: auto;
+      min-height: 46px;
+      padding: 14px 32px;
+      line-height: normal;
+      border-radius: 6px;
+      border-color: rgba(255,255,255,.2);
+      background: transparent;
+      color: rgba(255,255,255,.6);
+      box-sizing: border-box;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .why-cta .call-cta-menu {
+      align-self: stretch;
+    }
+    .why-cta .call-cta-menu summary {
+      height: 100%;
+    }
+    .why-cta .call-cta-menu summary:hover,
+    .why-cta .call-cta-menu[open] summary {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.34);
+      color: #fff;
+      transform: none;
+    }
+    .call-cta-menu .nav-call-panel {
+      top: calc(100% + 10px);
+      right: 0;
+      left: auto;
+      min-width: 210px;
+    }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--navy); transition: .3s; }
+
+    /* ── NAV DROPDOWNS ── */
+    .nav-links > li { position: relative; }
+    .nav-chevron { width: 10px; height: 6px; fill: currentColor; flex-shrink: 0; transition: transform 0.2s; }
+    .nav-links > li:hover .nav-chevron { transform: rotate(180deg); }
+
+    .nav-dropdown {
+      position: absolute; top: 100%; left: 0;
+      padding-top: 14px; z-index: 200;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+    }
+    .nav-dd-panel {
+      background: rgba(13, 54, 49, 0.97);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid rgba(58,174,160,0.2);
+      border-radius: 16px; padding: 14px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+      min-width: 220px;
+    }
+    .nav-links > li:hover .nav-dropdown,
+    .nav-links > li:focus-within .nav-dropdown {
+      pointer-events: auto;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition-delay: 0s;
+    }
+    .nav-dropdown-wide .nav-dd-panel { min-width: 400px; }
+    .nav-dropdown-right { left: auto; right: 0; }
+    .nav-dd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .nav-dd-col { display: flex; flex-direction: column; gap: 2px; }
+    .nav-dd-link {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 9px 10px; border-radius: 10px;
+      transition: background 0.12s; color: #fff;
+    }
+    .nav-dd-link:hover { background: rgba(255,255,255,0.08); }
+    .nav-dd-icon { color: var(--teal); flex-shrink: 0; margin-top: 2px; font-size: 18px; }
+    .nav-dd-name { display: block; font-size: .8rem; font-weight: 500; color: #fff; line-height: 1.3; transition: color 0.12s; }
+    .nav-dd-link:hover .nav-dd-name { color: var(--teal); }
+    .nav-dd-desc { display: block; font-size: .68rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+    .nav-dd-label {
+      font-size: .62rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); padding: 4px 10px 8px; display: block;
+    }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      position: fixed;
+      top: 68px;
+      right: 0;
+      bottom: 0;
+      width: min(420px, 100vw);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 24px 20px 28px;
+      background: linear-gradient(160deg, rgba(13,54,49,0.98) 0%, rgba(21,112,104,0.98) 58%, rgba(58,174,160,0.96) 100%);
+      border-left: 1px solid rgba(255,255,255,0.12);
+      box-shadow: -24px 0 60px rgba(0,0,0,0.24);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      transform: translateX(100%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: transform .28s ease, opacity .22s ease, visibility 0s linear .28s;
+      z-index: 150;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition-delay: 0s;
+    }
+    .mobile-menu a {
+      display: flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      font-size: .88rem;
+      font-weight: 500;
+      letter-spacing: .01em;
+      text-transform: none;
+      line-height: 1.35;
+      transition: background .15s ease, border-color .15s ease, transform .15s ease;
+    }
+    .mobile-menu a:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.22);
+      transform: translateX(-2px);
+    }
+    .mobile-menu-group-label {
+      margin-top: 8px;
+      padding: 10px 4px 2px;
+      font-size: .64rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.56);
+    }
+    .mobile-menu details {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+    .mobile-menu summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      padding: 12px 14px;
+      color: #fff;
+      font-size: .88rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .mobile-menu summary::-webkit-details-marker { display: none; }
+    .mobile-menu summary::after {
+      content: "";
+      width: 10px;
+      height: 6px;
+      flex-shrink: 0;
+      background: currentColor;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      opacity: .78;
+      transition: transform .18s ease;
+    }
+    .mobile-menu details[open] summary::after {
+      transform: rotate(180deg);
+    }
+    .mobile-submenu {
+      display: grid;
+      gap: 8px;
+      padding: 0 10px 10px;
+    }
+    .mobile-submenu a {
+      min-height: 42px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      font-size: .8rem;
+      color: rgba(255,255,255,0.82);
+    }
+    .mobile-menu .btn {
+      justify-content: center;
+      margin-top: 10px;
+      border-color: rgba(255,255,255,0.22);
+      background: #fff;
+      color: var(--navy);
+      font-size: .76rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .mobile-menu .btn:hover {
+      background: rgba(255,255,255,0.92);
+      transform: none;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: calc(100vh - 68px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f3f8f7 0%, #eef6f4 100%);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=80') center right / cover no-repeat;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(30,122,112,0.98) 0%, rgba(21,112,104,0.94) 26%, rgba(15,90,83,0.76) 44%, rgba(15,90,83,0.34) 60%, rgba(15,90,83,0.08) 74%, rgba(15,90,83,0) 100%),
+        linear-gradient(180deg, rgba(13,63,58,0.12) 0%, rgba(13,63,58,0) 22%, rgba(247,247,245,0.06) 72%, rgba(247,247,245,0.9) 100%);
+      z-index: 1;
+    }
+    .hero-left {
+      padding: 64px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
+    .hero-h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 4vw, 4.25rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin: 20px 0 28px;
+    }
+    .hero-line {
+      display: block;
+    }
+    .hero-line-nowarp {
+      white-space: nowrap;
+    }
+    .hero-h1 em { font-style: normal; font-weight: 300; color: rgba(255,255,255,.65); }
+    .hero-sub {
+      font-size: 1.08rem;
+      color: rgba(255,255,255,.78);
+      line-height: 1.85;
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-actions .btn { white-space: nowrap; }
+    .hero-right {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      z-index: 2;
+      padding: 64px 72px 64px 28px;
+    }
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .hero-card-overlay {
+      position: relative;
+      z-index: 2;
+      background: #fff;
+      padding: 36px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      width: 100%;
+    }
+    .hero-card-label {
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 14px;
+    }
+    .hero-card-title {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+    .hero-card-copy {
+      font-size: .85rem;
+      color: var(--mid);
+      line-height: 1.75;
+      margin-bottom: 24px;
+      max-width: 560px;
+      white-space: nowrap;
+    }
+    .hero-mini-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hero-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .hero-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .hero-field label {
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .hero-field input,
+    .hero-field select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--navy);
+      font-size: .85rem;
+      font-family: inherit;
+      padding: 14px 16px;
+      outline: none;
+    }
+    .hero-field select { appearance: none; cursor: pointer; }
+    .hero-field input::placeholder { color: #a7b0bd; }
+    .hero-card-note {
+      font-size: .72rem;
+      color: var(--mid);
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+
+    /* ── LENDER STRIP ── */
+    @keyframes lender-marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .lender-strip {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+      background: #fff;
+    }
+    .lender-strip-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .lender-strip-label {
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .lender-marquee {
+      position: relative;
+      overflow: hidden;
+      min-width: 0;
+    }
+    .lender-marquee::before,
+    .lender-marquee::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 48px;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .lender-marquee::before {
+      left: 0;
+      background: linear-gradient(to right, #fff, rgba(255,255,255,0));
+    }
+    .lender-marquee::after {
+      right: 0;
+      background: linear-gradient(to left, #fff, rgba(255,255,255,0));
+    }
+    .lender-marquee-track {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      animation: lender-marquee 28s linear infinite;
+    }
+    .lender-marquee-group {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding-right: 18px;
+    }
+    .lender-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 118px;
+      height: 30px;
+      white-space: nowrap;
+    }
+    .lender-name img {
+      max-height: 24px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      filter: grayscale(1);
+      opacity: .68;
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 96px 0; }
+
+    /* ── SERVICES ── */
+    .services { background: linear-gradient(180deg, #fff 0%, var(--off) 100%); border-top: 1px solid var(--border); }
+    .services-header {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; margin-bottom: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .services-h2 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+    .services-h2 em { font-style: normal; font-weight: 300; color: var(--mid); }
+    .services-desc {
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .services-desc p { font-size: .9rem; color: var(--mid); line-height: 1.75; }
+    .services-desc .btn { margin-top: 28px; align-self: flex-start; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .service-item {
+      padding: 40px 36px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .service-item:hover { background: var(--off); }
+    .service-item:nth-child(3n) { border-right: none; }
+    .service-item:nth-child(n+4) { border-bottom: none; }
+    .service-num { display: none; }
+    .service-item h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .service-item p { font-size: .825rem; color: var(--mid); line-height: 1.7; }
+    .service-arrow {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 500;
+      transition: letter-spacing .2s;
+    }
+    .service-item:hover .service-arrow { letter-spacing: .18em; }
+
+    /* ── HOW ── */
+    .how { background: linear-gradient(160deg, var(--off) 0%, #e4f4f2 100%); border-top: 1px solid var(--border); }
+    .how-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 120px; align-items: start;
+    }
+    .how-left { }
+    .how-h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 48px;
+      line-height: 1.1;
+    }
+    .steps { display: flex; flex-direction: column; }
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:first-child { padding-top: 0; }
+    .step-num {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--mid);
+      padding-top: 2px;
+    }
+    .step h4 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .step p { font-size: .825rem; color: var(--mid); line-height: 1.7; }
+    .how-right { padding-top: 48px; }
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 35px;
+      height: calc(100% - 78px);
+      width: 1px;
+      background: var(--border);
+    }
+    .timeline-item {
+      display: flex; gap: 28px;
+      align-items: flex-start;
+      padding: 20px 0;
+    }
+    .timeline-dot {
+      width: 31px; height: 31px; flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .timeline-dot.active {
+      background: var(--navy); border-color: var(--navy);
+    }
+    .timeline-dot.active::after {
+      content: '';
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #fff;
+    }
+    .timeline-dot:not(.active)::after {
+      content: '';
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border);
+    }
+    .timeline-body {
+      padding-top: 4px;
+      min-width: 0;
+      flex: 1;
+    }
+    .timeline-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 3px;
+    }
+    .timeline-day { display: none; }
+    .timeline-body strong {
+      font-size: .875rem; font-weight: 500; color: var(--navy);
+    }
+    .timeline-body span { font-size: .775rem; color: var(--mid); }
+
+    /* ── WHY ── */
+    .why {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--navy) 0%, #157068 50%, #0f5a53 100%);
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .why::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 46%;
+      background:
+        radial-gradient(circle at 18% 30%, rgba(255,255,255,.14) 0, rgba(255,255,255,0) 28%),
+        radial-gradient(circle at 30% 72%, rgba(255,255,255,.08) 0, rgba(255,255,255,0) 22%),
+        linear-gradient(90deg, rgba(30,122,112,.82) 0%, rgba(30,122,112,.62) 45%, rgba(30,122,112,0) 100%);
+      opacity: .95;
+      pointer-events: none;
+    }
+    .why-inner {
+      display: grid;
+      gap: 56px;
+      position: relative;
+      z-index: 1;
+    }
+    .why-intro {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .why .label-tag { color: rgba(255,255,255,.3); }
+    .why-h2 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .why-h2 em { font-style: normal; font-weight: 300; color: rgba(255,255,255,.5); }
+    .why-sub { font-size: .875rem; color: #fff; line-height: 1.75; margin-bottom: 32px; }
+    .why-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .why-points {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      align-items: stretch;
+    }
+    .why-point {
+      padding: 24px 20px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      display: grid; grid-template-columns: 28px 1fr;
+      gap: 20px; align-items: start;
+    }
+    .why-point-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(8, 35, 33, 0.22);
+    }
+    .why-point-num iconify-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+    .why-point h4 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .why-point p { font-size: .8rem; color: #fff; line-height: 1.7; }
+
+    /* ── CREDENTIALS ── */
+    .credentials {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .credentials-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-bottom: 56px;
+      align-items: end;
+    }
+    .credentials-h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+    .credentials-sub {
+      font-size: .875rem;
+      color: var(--mid);
+      line-height: 1.75;
+      padding-top: 8px;
+      max-width: 520px;
+    }
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #fff 0%, #f8fcfb 100%);
+    }
+    .credential-card {
+      padding: 34px 28px;
+      border-right: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .credential-card:last-child { border-right: none; }
+    .credential-card:hover { background: var(--off); }
+    .credential-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(58,174,160,.12);
+      color: var(--teal);
+      margin-bottom: 18px;
+    }
+    .credential-card h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .credential-card p {
+      font-size: .8rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .credential-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    /* ── GUIDANCE ── */
+    .guidance {
+      background: linear-gradient(180deg, var(--off) 0%, #fff 100%);
+      border-top: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .guidance::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('assets/clientmeeting.png') -160px center / cover no-repeat;
+      width: 60%;
+      -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 72%, rgba(0,0,0,0.82) 80%, rgba(0,0,0,0.45) 88%, rgba(0,0,0,0.12) 95%, transparent 100%);
+      mask-image: linear-gradient(90deg, #000 0%, #000 72%, rgba(0,0,0,0.82) 80%, rgba(0,0,0,0.45) 88%, rgba(0,0,0,0.12) 95%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .guidance::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.52) 16%, rgba(255,255,255,0.82) 30%, rgba(255,255,255,0.95) 44%, rgba(255,255,255,0.98) 56%, rgba(255,255,255,0.88) 64%, rgba(255,255,255,0.62) 72%, rgba(255,255,255,0.24) 80%, rgba(255,255,255,0) 88%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .guidance > .container {
+      position: relative;
+      z-index: 2;
+    }
+    .guidance-header {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-bottom: 56px;
+    }
+    .guidance-header-spacer { min-height: 1px; }
+    .guidance-copy {
+      display: grid;
+      gap: 16px;
+      max-width: 520px;
+    }
+    .guidance-h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      text-shadow: 0 0 18px rgba(255,255,255,0.9), 0 0 34px rgba(255,255,255,0.6);
+    }
+    .guidance-sub { font-size: .875rem; color: var(--mid); line-height: 1.75; }
+    .guidance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .guidance-card {
+      padding: 36px 28px;
+      border-right: 1px solid var(--border);
+      transition: background .2s;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(2px);
+    }
+    .guidance-card:last-child { border-right: none; }
+    .guidance-card:hover { background: var(--off); }
+    .guidance-kicker { display: none; }
+    .guidance-card h3 {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .guidance-card p {
+      font-size: .8rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: linear-gradient(180deg, #e4f4f2 0%, var(--off) 100%); border-top: 1px solid var(--border); }
+    .testimonials-header { margin-bottom: 56px; }
+    .testimonials-h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .testimonial-card {
+      padding: 40px 36px;
+      border-right: 1px solid var(--border);
+      border-top: 1px solid var(--border);
+    }
+    .testimonial-card:last-child { border-right: none; }
+    .quote-mark {
+      font-family: var(--serif);
+      font-size: 4rem;
+      color: var(--teal);
+      line-height: .8;
+      margin-bottom: 20px;
+      opacity: .4;
+    }
+    .testimonial-card blockquote {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      font-style: italic;
+      opacity: .85;
+    }
+    .testimonial-meta {
+      display: flex; align-items: center; gap: 14px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+    .meta-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%; background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem; font-weight: 600; color: #fff;
+      flex-shrink: 0;
+    }
+    .meta-name { font-size: .8rem; font-weight: 500; color: var(--navy); }
+    .meta-loc { font-size: .72rem; color: var(--mid); }
+    .stars { color: var(--teal); font-size: .75rem; letter-spacing: 2px; margin-bottom: 4px; opacity: .8; }
+
+    /* ── CTA ── */
+    .cta-band {
+      background: linear-gradient(100deg, #0f5a53 0%, var(--navy) 50%, #1a8a7e 100%);
+      padding: 80px 0;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .cta-band-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 48px;
+    }
+    .cta-band-text { }
+    .cta-band-text p {
+      font-size: clamp(1.75rem, 3vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: #fff;
+      line-height: 1.2;
+      max-width: 560px;
+    }
+    .cta-band-text p em { font-style: normal; font-weight: 300; color: rgba(255,255,255,.5); }
+    .cta-band-actions { display: flex; gap: 12px; flex-shrink: 0; }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--off); border-top: 1px solid var(--border); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; }
+    .contact-left { }
+    .contact-h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: var(--navy);
+      margin-bottom: 40px;
+    }
+    .contact-details {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .contact-person {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.72);
+      padding: 22px 22px 4px;
+    }
+    .contact-person-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .contact-person-role {
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+    .contact-row {
+      display: grid; grid-template-columns: 78px 1fr;
+      gap: 16px; padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .825rem;
+    }
+    .contact-row-label { color: var(--mid); font-weight: 500; }
+    .contact-row-val {
+      color: var(--navy);
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .contact-row-val a { color: var(--navy); transition: color .15s; }
+    .contact-row-val a:hover { color: var(--teal); }
+    .contact-person .contact-row:last-child { border-bottom: none; }
+
+    .form { display: flex; flex-direction: column; gap: 0; }
+    .field-group {
+      display: flex; flex-direction: column; gap: 6px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .field-group label {
+      font-size: .65rem; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--mid);
+    }
+    .field-group input,
+    .field-group select,
+    .field-group textarea {
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: .9rem;
+      font-family: inherit;
+      color: var(--navy);
+      padding: 6px 0 2px;
+      width: 100%;
+    }
+    .field-group select { appearance: none; cursor: pointer; }
+    .field-group textarea { resize: none; height: 80px; }
+    .field-group input::placeholder,
+    .field-group textarea::placeholder { color: #c4c9d4; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .form-row-2 .field-group:first-child { padding-right: 24px; border-right: 1px solid var(--border); }
+    .form-row-2 .field-group:last-child { padding-left: 24px; }
+    .form-submit { margin-top: 32px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: linear-gradient(160deg, #0d4f49 0%, var(--navy) 100%);
+      color: rgba(255,255,255,.5);
+      padding: 50px 0 28px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: minmax(220px, .9fr) minmax(360px, 1.2fr) minmax(440px, 1.45fr);
+      gap: 18px 28px;
+      align-items: start;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-brand {
+      align-self: start;
+      justify-self: start;
+    }
+    .footer-brand .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .footer-logo-mark {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6rem; font-weight: 700; color: #fff;
+      letter-spacing: -.5px;
+    }
+    .footer-wordmark {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: .02em;
+    }
+    .footer-brand p { font-size: .78rem; line-height: 1.65; max-width: 240px; }
+    .footer-links-row {
+      align-self: start;
+      justify-self: start;
+      padding-top: 4px;
+    }
+    .footer-links-row ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      justify-items: start;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-links-row li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-links-row a {
+      font-size: .8rem; color: rgba(255,255,255,.5);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      transition: color .15s;
+    }
+    .footer-links-row a:hover { color: #fff; }
+    .footer-form-card {
+      padding: 18px 20px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      align-self: start;
+    }
+    .footer-form-card h4 {
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.38);
+      margin-bottom: 10px;
+    }
+    .footer-form-card p {
+      font-size: .76rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,.62);
+      margin-bottom: 12px;
+    }
+    .footer-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .footer-form input,
+    .footer-form select,
+    .footer-form textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 10px;
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      font-size: .8rem;
+      font-family: inherit;
+      padding: 11px 13px;
+      outline: none;
+      transition: border-color .15s, background .15s;
+    }
+    .footer-form input::placeholder,
+    .footer-form textarea::placeholder { color: rgba(255,255,255,.38); }
+    .footer-form input:focus,
+    .footer-form select:focus,
+    .footer-form textarea:focus {
+      border-color: rgba(58,174,160,.8);
+      background: rgba(255,255,255,.09);
+    }
+    .footer-form select {
+      appearance: none;
+      cursor: pointer;
+    }
+    .footer-form textarea {
+      min-height: 78px;
+      resize: vertical;
+      grid-column: 1 / -1;
+    }
+    .footer-form button {
+      grid-column: 1 / -1;
+      align-self: stretch;
+      min-height: 0;
+      margin: 0;
+    }
+    .footer-form-note {
+      grid-column: 1 / -1;
+    }
+    .footer-form-note {
+      font-size: .68rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,.32);
+      margin-top: 0;
+    }
+    .footer-bottom {
+      padding-top: 18px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+      font-size: .72rem;
+    }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { color: rgba(255,255,255,.35); transition: color .15s; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,.7); }
+    .footer-disclaimer {
+      font-size: .68rem;
+      color: rgba(255,255,255,.2);
+      line-height: 1.6;
+      margin-top: 14px;
+      padding-top: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .container { padding: 0 24px; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 56px 24px; }
+      .hero-right { display: none; }
+      .lender-strip-inner { grid-template-columns: 1fr; gap: 16px; }
+      .why::before { width: 100%; opacity: .28; }
+      .services-header { grid-template-columns: 1fr; gap: 24px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .service-item:nth-child(3n) { border-right: 1px solid var(--border); }
+      .service-item:nth-child(2n) { border-right: none; }
+      .how-inner { grid-template-columns: 1fr; gap: 48px; }
+      .why-inner { gap: 40px; }
+      .why-points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .credentials-header,
+      .guidance-header { grid-template-columns: 1fr; gap: 20px; }
+      .credentials-grid { grid-template-columns: 1fr 1fr; }
+      .credential-card:nth-child(2) { border-right: none; }
+      .credential-card:nth-child(3),
+      .credential-card:nth-child(4) { border-top: 1px solid var(--border); }
+      .credential-card:nth-child(3) { border-right: 1px solid var(--border); }
+      .guidance-grid { grid-template-columns: 1fr 1fr; }
+      .guidance-card:nth-child(2) { border-right: none; }
+      .guidance-card:nth-child(3) { border-right: 1px solid var(--border); border-top: 1px solid var(--border); }
+      .guidance-card:last-child { border-top: 1px solid var(--border); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonial-card { border-right: none; }
+      .cta-band-inner { flex-direction: column; gap: 28px; }
+      .cta-band-actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .contact-details { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .footer-links-row { grid-column: 1 / -1; }
+      .footer-form-card { grid-column: 1 / -1; }
+      .footer-form { grid-template-columns: 1fr 1fr; }
+      .footer-form textarea,
+      .footer-form button,
+      .footer-form-note { grid-column: 1 / -1; }
+      .nav-links, .nav-right { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .hero-left { padding: 48px 24px; }
+      .hero-sub,
+      .why-sub,
+      .guidance-sub,
+      .services-desc p,
+      .credentials-sub,
+      .contact-row,
+      .testimonial-card blockquote {
+        font-size: .92rem;
+      }
+      .hero-actions,
+      .why-cta,
+      .cta-band-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-actions .btn,
+      .why-cta .btn,
+      .cta-band-actions .btn {
+        width: 100%;
+        text-align: center;
+      }
+      .service-item,
+      .testimonial-card,
+      .guidance-card,
+      .credential-card {
+        padding: 28px 24px;
+      }
+      .how-h2,
+      .testimonials-h2,
+      .contact-h2 {
+        margin-bottom: 32px;
+      }
+      .step {
+        gap: 18px;
+        padding: 22px 0;
+      }
+      .timeline-item {
+        gap: 18px;
+        padding: 16px 0;
+      }
+      .timeline::before {
+        left: 15px;
+        top: 30px;
+        height: calc(100% - 66px);
+      }
+      .credentials-header,
+      .guidance-header,
+      .services-header,
+      .testimonials-header {
+        margin-bottom: 40px;
+      }
+      .contact-h2 {
+        margin-bottom: 28px;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .footer-form-card,
+      .footer-links-row {
+        grid-column: auto;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-bottom-links {
+        flex-wrap: wrap;
+        gap: 14px 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      section { padding: 56px 0; }
+      .hero-left { padding: 44px 20px; }
+      .hero-line-nowarp { white-space: normal; }
+      .hero-actions .btn,
+      .why-cta .btn,
+      .cta-band-actions .btn {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+      .lender-strip { padding: 14px 0; }
+      .lender-strip-inner { gap: 12px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-item { border-right: none !important; }
+      .hero-h1 { font-size: clamp(2.7rem, 13vw, 4rem); }
+      .why-points { grid-template-columns: 1fr; }
+      .why-point {
+        grid-template-columns: 32px 1fr;
+        gap: 16px;
+        padding: 20px 18px;
+      }
+      .credentials-grid { grid-template-columns: 1fr; }
+      .credential-card {
+        border-right: none;
+        border-top: 1px solid var(--border);
+      }
+      .credential-card:first-child { border-top: none; }
+      .how-inner,
+      .contact-inner { gap: 36px; }
+      .step {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .step-num {
+        padding-top: 0;
+      }
+      .timeline-item {
+        gap: 14px;
+      }
+      .timeline-body strong {
+        font-size: .84rem;
+      }
+      .guidance-grid { grid-template-columns: 1fr; }
+      .guidance-card { border-right: none; border-top: 1px solid var(--border); }
+      .guidance-card:first-child { border-top: none; }
+      .guidance::before {
+        width: 100%;
+        background-position: -260px center;
+      }
+      .guidance::after {
+        background: linear-gradient(90deg, rgba(255,255,255,0.58) 0%, rgba(255,255,255,0.82) 20%, rgba(255,255,255,0.95) 36%, rgba(255,255,255,0.98) 52%, rgba(255,255,255,0.82) 68%, rgba(255,255,255,0.28) 86%, rgba(255,255,255,0) 100%);
+      }
+      .contact-person {
+        padding: 18px 18px 2px;
+      }
+      .contact-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 14px 0;
+      }
+      .footer-form {
+        grid-template-columns: 1fr;
+      }
+      .footer-form textarea,
+      .footer-form button,
+      .footer-form-note {
+        grid-column: auto;
+      }
+      .footer-form textarea {
+        min-height: 52px;
+      }
+      .footer-form-card { padding: 22px 20px; }
+      .hero-form-row { grid-template-columns: 1fr; }
+      .form-row-2 { grid-template-columns: 1fr; }
+      .form-row-2 .field-group:first-child { padding-right: 0; border-right: none; }
+      .form-row-2 .field-group:last-child { padding-left: 0; }
+      .mobile-menu {
+        width: 100vw;
+        padding: 20px 18px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="nprogress"></div>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="smartmovefinancelogo.png" alt="Smartmove Finance" style="height:42px; width:auto;" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li>
+          <a href="#why">About <svg class="nav-chevron" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg></a>
+          <div class="nav-dropdown">
+            <div class="nav-dd-panel">
+              <a class="nav-dd-link" href="#why">
+                <iconify-icon class="nav-dd-icon" icon="solar:users-group-two-rounded-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Why Smartmove</span><span class="nav-dd-desc">Our story and values</span></div>
+              </a>
+              <a class="nav-dd-link" href="meet-the-team.html">
+                <iconify-icon class="nav-dd-icon" icon="solar:user-id-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Meet the Team</span><span class="nav-dd-desc">The people behind your loan journey</span></div>
+              </a>
+              <a class="nav-dd-link" href="#testimonials">
+                <iconify-icon class="nav-dd-icon" icon="solar:star-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Reviews</span><span class="nav-dd-desc">What our clients say</span></div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-dropdown-wide">
+          <a href="calculators/borrowing-power.html">Calculators <svg class="nav-chevron" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg></a>
+          <div class="nav-dropdown nav-dropdown-wide">
+            <div class="nav-dd-panel"><div class="nav-dd-grid">
+              <div class="nav-dd-col">
+                <a class="nav-dd-link" href="calculators/borrowing-power.html"><iconify-icon class="nav-dd-icon" icon="solar:wallet-money-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Borrowing Power</span><span class="nav-dd-desc">How much can you borrow?</span></div></a>
+                <a class="nav-dd-link" href="calculators/mortgage-repayments.html"><iconify-icon class="nav-dd-icon" icon="solar:calculator-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Mortgage Repayments</span><span class="nav-dd-desc">Estimate monthly payments</span></div></a>
+                <a class="nav-dd-link" href="calculators/extra-repayments.html"><iconify-icon class="nav-dd-icon" icon="solar:graph-up-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Extra Repayments</span><span class="nav-dd-desc">Pay off your loan faster</span></div></a>
+              </div>
+              <div class="nav-dd-col">
+                <a class="nav-dd-link" href="calculators/loan-offset.html"><iconify-icon class="nav-dd-icon" icon="solar:card-transfer-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Loan Offset</span><span class="nav-dd-desc">See your offset savings</span></div></a>
+                <a class="nav-dd-link" href="calculators/comparison-rate.html"><iconify-icon class="nav-dd-icon" icon="solar:chart-2-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Comparison Rate</span><span class="nav-dd-desc">Find the true cost of a loan</span></div></a>
+                <a class="nav-dd-link" href="calculators/stamp-duty.html"><iconify-icon class="nav-dd-icon" icon="solar:document-add-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Stamp Duty</span><span class="nav-dd-desc">Calculate government fees</span></div></a>
+              </div>
+            </div></div>
+          </div>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#">More <svg class="nav-chevron" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg></a>
+          <div class="nav-dropdown nav-dropdown-right">
+            <div class="nav-dd-panel">
+              <span class="nav-dd-label">Resources</span>
+              <a class="nav-dd-link" href="#how">
+                <iconify-icon class="nav-dd-icon" icon="solar:route-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Our Process</span><span class="nav-dd-desc">How we work from start to settlement</span></div>
+              </a>
+              <a class="nav-dd-link" href="#guidance">
+                <iconify-icon class="nav-dd-icon" icon="solar:lightbulb-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Guidance</span><span class="nav-dd-desc">What to expect at every stage</span></div>
+              </a>
+              <a class="nav-dd-link" href="referrers.html">
+                <iconify-icon class="nav-dd-icon" icon="solar:users-group-rounded-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Referrers</span><span class="nav-dd-desc">Work with Smartmove and send clients our way</span></div>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-right">
+        <details class="nav-call-menu">
+          <summary aria-label="Choose a broker to call">
+            <iconify-icon icon="solar:phone-calling-rounded-linear" width="18"></iconify-icon>
+          </summary>
+          <div class="nav-call-panel">
+            <a class="nav-call-option" href="tel:0425709315">
+              <span class="nav-call-name">Vikram</span>
+              <span class="nav-call-number">0425 709 315</span>
+            </a>
+            <a class="nav-call-option" href="tel:0424304323">
+              <span class="nav-call-name">Atul</span>
+              <span class="nav-call-number">0424 304 323</span>
+            </a>
+          </div>
+        </details>
+        <a href="#contact" class="btn btn-dark">Speak to a Broker</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <details>
+      <summary>About</summary>
+      <div class="mobile-submenu">
+        <a href="#why" onclick="closeMenu()">Why Smartmove</a>
+        <a href="meet-the-team.html" onclick="closeMenu()">Meet the Team</a>
+        <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+      </div>
+    </details>
+    <details>
+      <summary>Calculators</summary>
+      <div class="mobile-submenu">
+        <a href="calculators/borrowing-power.html" onclick="closeMenu()">Borrowing Power</a>
+        <a href="calculators/mortgage-repayments.html" onclick="closeMenu()">Mortgage Repayments</a>
+        <a href="calculators/extra-repayments.html" onclick="closeMenu()">Extra Repayments</a>
+        <a href="calculators/loan-offset.html" onclick="closeMenu()">Loan Offset</a>
+        <a href="calculators/comparison-rate.html" onclick="closeMenu()">Comparison Rate</a>
+        <a href="calculators/stamp-duty.html" onclick="closeMenu()">Stamp Duty</a>
+      </div>
+    </details>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <details>
+      <summary>More</summary>
+      <div class="mobile-submenu">
+        <a href="#how" onclick="closeMenu()">Our Process</a>
+        <a href="#guidance" onclick="closeMenu()">Guidance</a>
+        <a href="referrers.html" onclick="closeMenu()">Referrers</a>
+      </div>
+    </details>
+    <a href="#contact" class="btn btn-dark" style="margin-top:16px;text-align:center;" onclick="closeMenu()">Speak to a Broker</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" style="padding:0;">
+  <div class="hero-left">
+    <div>
+      <h1 class="hero-h1"><span class="hero-line hero-line-nowarp">Smarter Home Loans.</span><em class="hero-line">Proven Results.</em></h1>
+      <p class="hero-sub">From first home buyers to seasoned investors and complex lending scenarios, we craft thoughtful finance strategies for niche loans, portfolio growth, and property decisions that demand a more considered approach.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-white">Get in Touch with an Expert</a>
+        <a href="#how" class="btn btn-outline" style="border-color:rgba(255,255,255,.25); color:rgba(255,255,255,.7);">Our Process</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-image"></div>
+    <div class="hero-card-overlay">
+      <div class="hero-card-label">Start the Conversation</div>
+      <h3 class="hero-card-title">Speak with a mortgage expert</h3>
+      <p class="hero-card-copy">Share a few details and we will get in touch to talk through your options.</p>
+      <form class="hero-mini-form" onsubmit="handleSubmit(event)">
+        <div class="hero-form-row">
+          <div class="hero-field">
+            <label for="heroName">Name</label>
+            <input id="heroName" type="text" placeholder="Jane Smith" required />
+          </div>
+          <div class="hero-field">
+            <label for="heroPhone">Phone</label>
+            <input id="heroPhone" type="tel" placeholder="0400 000 000" required />
+          </div>
+        </div>
+        <div class="hero-field">
+          <label for="heroEmail">Email</label>
+          <input id="heroEmail" type="email" placeholder="jane@example.com" required />
+        </div>
+        <div class="hero-field">
+          <label for="heroPurpose">Looking For</label>
+          <select id="heroPurpose" required>
+            <option value="">Select an option</option>
+            <option>Buying my first home</option>
+            <option>Refinancing</option>
+            <option>Investing</option>
+            <option>Upgrading</option>
+            <option>Construction finance</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-dark" style="width:100%; text-align:center;">Request a Call Back</button>
+      </form>
+      <p class="hero-card-note">No obligation. Just clear guidance from a broker who works for you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── LENDERS ── -->
+<div class="lender-strip">
+  <div class="container">
+    <div class="lender-strip-inner">
+      <span class="lender-strip-label">40+ Lenders including</span>
+      <div class="lender-marquee" aria-label="Selected lender panel">
+        <div class="lender-marquee-track">
+          <div class="lender-marquee-group" aria-hidden="false">
+            <span class="lender-name"><img src="assets/anz.webp" alt="ANZ" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/commbank.webp" alt="Commonwealth Bank" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/westpac.webp" alt="Westpac" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/nab.webp" alt="NAB" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/ing.webp" alt="ING" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/pepper-money.webp" alt="Pepper Money" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/bankwest.webp" alt="Bankwest" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/heritage-bank.webp" alt="Heritage Bank" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/me-bank.webp" alt="ME Bank" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/bank-australia.webp" alt="Bank Australia" loading="lazy" /></span>
+          </div>
+          <div class="lender-marquee-group" aria-hidden="true">
+            <span class="lender-name"><img src="assets/anz.webp" alt="" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/commbank.webp" alt="" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/westpac.webp" alt="" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/nab.webp" alt="" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/ing.webp" alt="" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/pepper-money.webp" alt="" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/bankwest.webp" alt="" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/heritage-bank.webp" alt="" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/me-bank.webp" alt="" loading="lazy" /></span>
+            <span class="lender-name"><img src="assets/bank-australia.webp" alt="" loading="lazy" /></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <span class="label-tag">What We Do</span>
+        <h2 class="services-h2">Loan solutions for<br /><em>all your property goals</em></h2>
+      </div>
+      <div class="services-desc">
+        <p>From your first home to growing your investment portfolio, our team have the expertise to guide you through every property finance decision, simply, clearly, and without complication.</p>
+        <a href="#contact" class="btn btn-outline">Start a Conversation</a>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <h3>First Home Buyers</h3>
+        <p>Navigating your first purchase can be complex. We simplify the process, help you access government grants, and structure a loan that sets you up for success, without overwhelming you.</p>
+        
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <h3>Refinancing</h3>
+        <p>Your current loan may no longer be right for you. We'll review it closely and compare 40+ alternatives to find a better overall fit for your current situation and goals.</p>
+        
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <h3>Investment Loans</h3>
+        <p>Build your property portfolio with a strategic lending approach. We structure investment finance to maximise borrowing power and tax efficiency.</p>
+        
+      </div>
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <h3>Construction Loans</h3>
+        <p>Wanting to build your dream home? We provide structured construction finance that supports progress payments, builder timelines, and efficient approvals.</p>
+
+      </div>
+      <div class="service-item">
+        <div class="service-num">05</div>
+        <h3>Self-Employed</h3>
+        <p>Non-standard income shouldn't mean non-standard service. We work with specialist lenders who understand the complexity of self-employed financials.</p>
+        
+      </div>
+      <div class="service-item">
+        <div class="service-num">06</div>
+        <h3>Commercial Finance</h3>
+        <p>From business lending to commercial property acquisitions, we structure finance solutions that support growth, cash flow, and more complex lending requirements.</p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW ── -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="how-inner">
+      <div class="how-left">
+        <span class="label-tag">The Process</span>
+        <h2 class="how-h2">From first call<br />to settlement</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div>
+              <h4>Free Consultation</h4>
+              <p>Tell us about your goals, income, and situation. We'll assess your borrowing capacity with no obligation or credit impact.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div>
+              <h4>We Compare the Market</h4>
+              <p>We search across 40+ lenders to identify the best loan options matched to your specific financial situation and goals.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div>
+              <h4>We Handle the Paperwork</h4>
+              <p>We prepare and lodge your application, liaise directly with the lender, and keep you informed at every step along the way.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div>
+              <h4>Approval & Settlement</h4>
+              <p>Once approved, we coordinate with your solicitor or conveyancer and lender to ensure a smooth, on-time settlement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="how-right">
+        <span class="label-tag">Your Loan Journey</span>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot active"><span class="visually-hidden"></span></div>
+            <div class="timeline-body">
+              <div class="timeline-heading">
+                <strong>Discovery Call</strong>
+                <span class="timeline-day">Day 1</span>
+              </div>
+              <span>Goals, budget, deposit, and borrowing range discussed</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-body">
+              <div class="timeline-heading">
+                <strong>Documents Reviewed</strong>
+                <span class="timeline-day">Days 2-7</span>
+              </div>
+              <span>ID, income, expenses, and existing liabilities checked</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-body">
+              <div class="timeline-heading">
+                <strong>Options Presented</strong>
+                <span class="timeline-day">Days 7-14</span>
+              </div>
+              <span>Shortlisted lenders matched to your priorities</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-body">
+              <div class="timeline-heading">
+                <strong>Application Prepared</strong>
+                <span class="timeline-day">Days 14-21</span>
+              </div>
+              <span>Final checks underway before lodgement</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-heading">
+                <strong>Lender Assessment</strong>
+                <span class="timeline-day">Days 21-45</span>
+              </div>
+              <span>We manage follow-up, updates, and next steps with the lender</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-heading">
+                <strong>Approval and Settlement Support</strong>
+                <span class="timeline-day">Days 45-90</span>
+              </div>
+              <span>We stay involved through formal approval and completion</span>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-dark" style="margin-top:40px;">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY ── -->
+<section class="why" id="why" style="padding:96px 0;">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-intro">
+        <span class="label-tag">Why Smartmove</span>
+        <h2 class="why-h2">We work for you,<br /><em>not the bank</em></h2>
+        <p class="why-sub">As independent brokers we are not partial to any lender. Our entire focus is finding the finance solution that best suits your circumstances, full stop.</p>
+        <div class="why-cta">
+          <a href="#contact" class="btn btn-white">Book a Free Consultation</a>
+          <details class="nav-call-menu call-cta-menu">
+            <summary aria-label="Choose a broker to call" class="btn btn-outline">
+              Call Us
+            </summary>
+            <div class="nav-call-panel">
+              <a class="nav-call-option" href="tel:0425709315">
+                <span class="nav-call-name">Vikram</span>
+                <span class="nav-call-number">0425 709 315</span>
+              </a>
+              <a class="nav-call-option" href="tel:0424304323">
+                <span class="nav-call-name">Atul</span>
+                <span class="nav-call-number">0424 304 323</span>
+              </a>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-point-num"><iconify-icon icon="solar:user-rounded-linear"></iconify-icon></div>
+          <div>
+            <h4>Truly Independent</h4>
+            <p>We're not tied to any single lender or institution. Every recommendation is guided solely by what's best for you.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num"><iconify-icon icon="solar:tag-price-linear"></iconify-icon></div>
+          <div>
+            <h4>No Cost to You</h4>
+            <p>Our service is completely free for borrowers. We're paid a commission by the lender once your loan settles.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num"><iconify-icon icon="solar:chat-round-dots-linear"></iconify-icon></div>
+          <div>
+            <h4>Clear Communication</h4>
+            <p>You will always know what is happening next, what is needed, and who is handling each step.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num"><iconify-icon icon="solar:users-group-rounded-linear"></iconify-icon></div>
+          <div>
+            <h4>End-to-End Support</h4>
+            <p>From strategy and paperwork through approval and settlement, we stay with you the whole way.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="credentials" id="credentials">
+  <div class="container">
+    <div class="credentials-header">
+      <div>
+        <span class="label-tag">Accreditations & Qualifications</span>
+        <h2 class="credentials-h2">The credentials behind the advice.</h2>
+      </div>
+      <div>
+        <p class="credentials-sub">Smartmove combines industry membership, regulatory standing, market access, and years of broking experience so clients can move forward with more confidence.</p>
+      </div>
+    </div>
+    <div class="credentials-grid">
+      <article class="credential-card">
+        <div class="credential-icon"><iconify-icon icon="solar:medal-ribbons-star-linear" width="22"></iconify-icon></div>
+        <h3>MFAA Member</h3>
+        <p>We operate as part of the Mortgage &amp; Finance Association of Australia, reflecting an ongoing commitment to professional standards within the broking industry.</p>
+        <span class="credential-meta">Industry Membership</span>
+      </article>
+      <article class="credential-card">
+        <div class="credential-icon"><iconify-icon icon="solar:shield-check-linear" width="22"></iconify-icon></div>
+        <h3>ASIC Authorised</h3>
+        <p>Clients can feel confident they are working with a business that operates within Australia’s regulated lending and credit advice framework.</p>
+        <span class="credential-meta">Regulatory Standing</span>
+      </article>
+      <article class="credential-card">
+        <div class="credential-icon"><iconify-icon icon="solar:buildings-3-linear" width="22"></iconify-icon></div>
+        <h3>40+ Lenders</h3>
+        <p>Access to a broad lender panel helps us compare policy, pricing, and structure more effectively instead of forcing clients into one narrow path.</p>
+        <span class="credential-meta">Market Access</span>
+      </article>
+      <article class="credential-card">
+        <div class="credential-icon"><iconify-icon icon="solar:clock-circle-linear" width="22"></iconify-icon></div>
+        <h3>20+ Years of Lending Experience </h3>
+        <p>Years of lending experience bring sharper judgment, better scenario matching, and a calmer process when deals get more detailed or time-sensitive.</p>
+        <span class="credential-meta">Experience</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── GUIDANCE ── -->
+<section class="guidance" id="guidance">
+  <div class="container">
+    <div class="guidance-header">
+      <div class="guidance-header-spacer"></div>
+      <div class="guidance-copy">
+        <span class="label-tag">What to Expect</span>
+        <h2 class="guidance-h2">Clear guidance<br />at every stage</h2>
+        <p class="guidance-sub">We focus on lender fit, smart structure, and simple communication so you can make confident decisions without the noise.</p>
+      </div>
+    </div>
+    <div class="guidance-grid">
+      <div class="guidance-card">
+        <div class="guidance-kicker">01</div>
+        <h3>Options Matched to You</h3>
+        <p>We compare lenders based on your goals, deposit, income, and timeline, then explain the tradeoffs in plain English.</p>
+      </div>
+      <div class="guidance-card">
+        <div class="guidance-kicker">02</div>
+        <h3>Structure That Fits Real Life</h3>
+        <p>We help you weigh up repayment flexibility, offset features, cash flow needs, and future plans before you commit.</p>
+      </div>
+      <div class="guidance-card">
+        <div class="guidance-kicker">03</div>
+        <h3>Paperwork Handled Properly</h3>
+        <p>We coordinate the documents, lodge the application, and stay on top of lender follow-up so things keep moving.</p>
+      </div>
+      <div class="guidance-card">
+        <div class="guidance-kicker">04</div>
+        <h3>Support Through Completion</h3>
+        <p>From the first conversation through approval and settlement, you have a broker in your corner the whole way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <span class="label-tag">Client Reviews</span>
+      <h2 class="testimonials-h2">What our clients say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <blockquote>Smartmove Finance made buying our first home so much less daunting. They found us a rate 0.6% lower than what our own bank offered and handled everything professionally.</blockquote>
+        <div class="testimonial-meta">
+          <div class="meta-avatar">JL</div>
+          <div>
+            <div class="meta-name">James & Lucy</div>
+            <div class="meta-loc">First Home Buyers · Sydney</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <blockquote>I'd been putting off refinancing for years thinking it was too complex. The team sorted everything within a week and I'm saving over $400 a month. Exceptional service.</blockquote>
+        <div class="testimonial-meta">
+          <div class="meta-avatar">MR</div>
+          <div>
+            <div class="meta-name">Michelle R.</div>
+            <div class="meta-loc">Refinance Client · Melbourne</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <blockquote>As a self-employed business owner I thought getting approved would be near impossible. Smartmove found a lender who genuinely understood my situation. Highly recommend.</blockquote>
+        <div class="testimonial-meta">
+          <div class="meta-avatar">DK</div>
+          <div>
+            <div class="meta-name">David K.</div>
+            <div class="meta-loc">Self-Employed · Brisbane</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ── -->
+<div class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <div class="cta-band-text">
+        <p>Ready to make a<br /><em>smarter move</em>?</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="#contact" class="btn btn-white">Get in Touch with an Expert</a>
+        <a href="tel:0425709315" class="btn btn-outline" style="border-color:rgba(255,255,255,.2); color:rgba(255,255,255,.6);">0425 709 315</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <span class="label-tag">Get in Touch</span>
+        <h2 class="contact-h2">Let's find your<br />perfect loan</h2>
+        <div class="contact-details">
+          <div class="contact-person">
+            <div class="contact-person-name">Vikram</div>
+            <div class="contact-person-role">Mortgage Broker</div>
+            <div class="contact-row">
+              <span class="contact-row-label">Phone</span>
+              <span class="contact-row-val"><a href="tel:0425709315">0425 709 315</a></span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row-label">Email</span>
+              <span class="contact-row-val"><a href="mailto:vikram@smartmovefinance.com.au">vikram@smartmovefinance.com.au</a></span>
+            </div>
+          </div>
+          <div class="contact-person">
+            <div class="contact-person-name">Atul</div>
+            <div class="contact-person-role">Mortgage Broker</div>
+            <div class="contact-row">
+              <span class="contact-row-label">Phone</span>
+              <span class="contact-row-val"><a href="tel:0424304323">0424 304 323</a></span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row-label">Email</span>
+              <span class="contact-row-val"><a href="mailto:atul@smartmovefinance.com.au">atul@smartmovefinance.com.au</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="form" onsubmit="handleSubmit(event)">
+        <div class="form-row-2">
+          <div class="field-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Jane" required />
+          </div>
+          <div class="field-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="field-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="jane@example.com" required />
+        </div>
+        <div class="field-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="0400 000 000" />
+        </div>
+        <div class="field-group">
+          <label>Loan Purpose</label>
+          <select>
+            <option value="">Select...</option>
+            <option>First Home Purchase</option>
+            <option>Refinance Existing Loan</option>
+            <option>Investment Property</option>
+            <option>Construction Loan</option>
+            <option>Upgrading / Next Home</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Approximate Loan Amount</label>
+          <select>
+            <option value="">Select...</option>
+            <option>Under $300,000</option>
+            <option>$300,000 - $500,000</option>
+            <option>$500,000 - $750,000</option>
+            <option>$750,000 - $1,000,000</option>
+            <option>Over $1,000,000</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Message (optional)</label>
+          <textarea placeholder="Tell us about your situation..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-dark" style="width:100%;text-align:center;" id="submitBtn">Send Enquiry</button>
+        </div>
+        <p style="font-size:.7rem; color:var(--mid); margin-top:16px; line-height:1.6;">By submitting this form you agree to our <a href="privacy-policy.html" style="color:var(--navy); text-decoration:underline;">privacy policy</a>. Your information is never shared with third parties.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="smartmovefinanceemblem.png" alt="Smartmove Finance" style="height:60px; width:auto; filter:brightness(0) invert(1);" />
+        </div>
+        <p>Independent mortgage brokers helping Australians make smarter property finance decisions.</p>
+      </div>
+
+      <div class="footer-links-row">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="calculators/borrowing-power.html">Loan Calculators</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="referrers.html">Referrers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-form-card">
+        <h4>Quick Contact</h4>
+        <p>Leave your details and a broker will reach out shortly.</p>
+        <form class="footer-form" onsubmit="handleSubmit(event)">
+          <input type="text" placeholder="Your name" required />
+          <input type="email" placeholder="Email address" required />
+          <input type="tel" placeholder="Phone number" required />
+          <select required>
+            <option value="">What do you need help with?</option>
+            <option>Buying my first home</option>
+            <option>Refinancing</option>
+            <option>Investment property</option>
+            <option>Construction finance</option>
+            <option>Borrowing power review</option>
+            <option>Other</option>
+          </select>
+          <textarea placeholder="Brief message"></textarea>
+          <button type="submit" class="btn btn-white" style="width:100%; text-align:center;">Request a Call Back</button>
+          <p class="footer-form-note">Your details stay private and are only used to respond to your enquiry.</p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      Smartmove Finance Pty Ltd is an authorised credit representative of [Aggregator Name] (Australian Credit Licence No. XXXXXX). MFAA member. Information on this website is general in nature and does not constitute personal financial or credit advice.
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Smartmove Finance Pty Ltd. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    if (!btn) return;
+    btn.textContent = 'Enquiry sent. We will be in touch soon';
+    btn.style.background = '#3aaea0';
+    btn.disabled = true;
+  }
+
+  // Fade in progress bar on load
+  window.addEventListener('load', () => {
+    const bar = document.getElementById('nprogress');
+    if (bar) setTimeout(() => bar.style.opacity = '0', 1200);
+  });
+</script>
+
+</body>
+</html>

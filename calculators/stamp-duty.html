@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stamp Duty Calculator | Smartmove Finance</title>
+  <meta name="description" content="Calculate stamp duty and upfront costs for any state in Australia. Free stamp duty calculator from Smartmove Finance." />
+  <link rel="icon" type="image/png" href="../smartmovefinanceemblem.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="calculator.css" />
+  <script src="../assets/page-transition.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">
+        <img src="smartmovefinancelogo.png" alt="Smartmove Finance" style="height:42px; width:auto;" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="../#services">Services</a></li>
+        <li>
+          <a href="../#why">About <svg class="nav-chevron" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg></a>
+          <div class="nav-dropdown">
+            <div class="nav-dd-panel">
+              <a class="nav-dd-link" href="../#why">
+                <iconify-icon class="nav-dd-icon" icon="solar:users-group-two-rounded-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Why Smartmove</span><span class="nav-dd-desc">Our story and values</span></div>
+              </a>
+              <a class="nav-dd-link" href="../meet-the-team.html">
+                <iconify-icon class="nav-dd-icon" icon="solar:user-id-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Meet the Team</span><span class="nav-dd-desc">The people behind your loan journey</span></div>
+              </a>
+              <a class="nav-dd-link" href="../#testimonials">
+                <iconify-icon class="nav-dd-icon" icon="solar:star-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Reviews</span><span class="nav-dd-desc">What our clients say</span></div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-dropdown-wide">
+          <a href="../calculators/borrowing-power.html">Calculators <svg class="nav-chevron" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg></a>
+          <div class="nav-dropdown nav-dropdown-wide">
+            <div class="nav-dd-panel"><div class="nav-dd-grid">
+              <div class="nav-dd-col">
+                <a class="nav-dd-link" href="../calculators/borrowing-power.html"><iconify-icon class="nav-dd-icon" icon="solar:wallet-money-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Borrowing Power</span><span class="nav-dd-desc">How much can you borrow?</span></div></a>
+                <a class="nav-dd-link" href="../calculators/mortgage-repayments.html"><iconify-icon class="nav-dd-icon" icon="solar:calculator-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Mortgage Repayments</span><span class="nav-dd-desc">Estimate monthly payments</span></div></a>
+                <a class="nav-dd-link" href="../calculators/extra-repayments.html"><iconify-icon class="nav-dd-icon" icon="solar:graph-up-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Extra Repayments</span><span class="nav-dd-desc">Pay off your loan faster</span></div></a>
+              </div>
+              <div class="nav-dd-col">
+                <a class="nav-dd-link" href="../calculators/loan-offset.html"><iconify-icon class="nav-dd-icon" icon="solar:card-transfer-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Loan Offset</span><span class="nav-dd-desc">See your offset savings</span></div></a>
+                <a class="nav-dd-link" href="../calculators/comparison-rate.html"><iconify-icon class="nav-dd-icon" icon="solar:chart-2-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Comparison Rate</span><span class="nav-dd-desc">Find the true cost of a loan</span></div></a>
+                <a class="nav-dd-link" href="../calculators/stamp-duty.html"><iconify-icon class="nav-dd-icon" icon="solar:document-add-linear" width="18"></iconify-icon><div><span class="nav-dd-name">Stamp Duty</span><span class="nav-dd-desc">Calculate government fees</span></div></a>
+              </div>
+            </div></div>
+          </div>
+        </li>
+        <li><a href="../#contact">Contact</a></li>
+        <li>
+          <a href="#">More <svg class="nav-chevron" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg></a>
+          <div class="nav-dropdown nav-dropdown-right">
+            <div class="nav-dd-panel">
+              <span class="nav-dd-label">Resources</span>
+              <a class="nav-dd-link" href="../#how">
+                <iconify-icon class="nav-dd-icon" icon="solar:route-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Our Process</span><span class="nav-dd-desc">How we work from start to settlement</span></div>
+              </a>
+              <a class="nav-dd-link" href="../#guidance">
+                <iconify-icon class="nav-dd-icon" icon="solar:lightbulb-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Guidance</span><span class="nav-dd-desc">What to expect at every stage</span></div>
+              </a>
+              <a class="nav-dd-link" href="../referrers.html">
+                <iconify-icon class="nav-dd-icon" icon="solar:users-group-rounded-linear" width="18"></iconify-icon>
+                <div><span class="nav-dd-name">Referrers</span><span class="nav-dd-desc">Work with Smartmove and send clients our way</span></div>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-right">
+        <details class="nav-call-menu">
+          <summary aria-label="Choose a broker to call">
+            <iconify-icon icon="solar:phone-calling-rounded-linear" width="18"></iconify-icon>
+          </summary>
+          <div class="nav-call-panel">
+            <a class="nav-call-option" href="tel:0425709315">
+              <span class="nav-call-name">Vikram</span>
+              <span class="nav-call-number">0425 709 315</span>
+            </a>
+            <a class="nav-call-option" href="tel:0424304323">
+              <span class="nav-call-name">Atul</span>
+              <span class="nav-call-number">0424 304 323</span>
+            </a>
+          </div>
+        </details>
+        <a href="../#contact" class="btn btn-dark">Speak to a Broker</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../#services" onclick="closeMenu()">Services</a>
+    <details>
+      <summary>About</summary>
+      <div class="mobile-submenu">
+        <a href="../#why" onclick="closeMenu()">Why Smartmove</a>
+        <a href="../meet-the-team.html" onclick="closeMenu()">Meet the Team</a>
+        <a href="../#testimonials" onclick="closeMenu()">Reviews</a>
+      </div>
+    </details>
+    <details>
+      <summary>Calculators</summary>
+      <div class="mobile-submenu">
+        <a href="../calculators/borrowing-power.html" onclick="closeMenu()">Borrowing Power</a>
+        <a href="../calculators/mortgage-repayments.html" onclick="closeMenu()">Mortgage Repayments</a>
+        <a href="../calculators/extra-repayments.html" onclick="closeMenu()">Extra Repayments</a>
+        <a href="../calculators/loan-offset.html" onclick="closeMenu()">Loan Offset</a>
+        <a href="../calculators/comparison-rate.html" onclick="closeMenu()">Comparison Rate</a>
+        <a href="../calculators/stamp-duty.html" onclick="closeMenu()">Stamp Duty</a>
+      </div>
+    </details>
+    <a href="../#contact" onclick="closeMenu()">Contact</a>
+    <details>
+      <summary>More</summary>
+      <div class="mobile-submenu">
+        <a href="../#how" onclick="closeMenu()">Our Process</a>
+        <a href="../#guidance" onclick="closeMenu()">Guidance</a>
+        <a href="../referrers.html" onclick="closeMenu()">Referrers</a>
+      </div>
+    </details>
+    <a href="../#contact" class="btn btn-dark" style="margin-top:16px;text-align:center;" onclick="closeMenu()">Speak to a Broker</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="calc-hero">
+  <div class="container">
+    <div class="calc-breadcrumb">
+      <a href="../">Home</a>
+      <span class="calc-breadcrumb-sep">›</span>
+      <a href="borrowing-power.html">Calculators</a>
+      <span class="calc-breadcrumb-sep">›</span>
+      <span>Stamp Duty</span>
+    </div>
+    <div class="calc-hero-content">
+      <span class="calc-hero-eyebrow">Free Calculator</span>
+      <h1>Stamp Duty Calculator</h1>
+      <p class="calc-hero-sub">Estimate stamp duty for every Australian state and territory. Includes first home buyer concessions and all upfront purchase costs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Calculator -->
+<section class="calc-section">
+  <div class="container">
+    <div class="calc-layout">
+
+      <!-- Sidebar -->
+      <aside class="calc-sidebar">
+        <div class="calc-sidebar-card">
+          <h3>What you need to know</h3>
+          <ul class="calc-sidebar-list">
+            <li class="calc-sidebar-item"><span class="calc-sidebar-check">✓</span>Stamp duty varies significantly by state</li>
+            <li class="calc-sidebar-item"><span class="calc-sidebar-check">✓</span>First home buyers get concessions in most states</li>
+            <li class="calc-sidebar-item"><span class="calc-sidebar-check">✓</span>Investors pay the full rate in all states</li>
+            <li class="calc-sidebar-item"><span class="calc-sidebar-check">✓</span>Paid at settlement — must be budgeted upfront</li>
+          </ul>
+          <p class="calc-sidebar-desc">Stamp duty (transfer duty) is one of the biggest upfront costs in a property purchase. Budget for it alongside your deposit, legal fees, and building inspection.</p>
+        </div>
+        <div class="calc-contact-card">
+          <h3>Plan your purchase</h3>
+          <input class="calc-contact-field" type="text" placeholder="Your name" />
+          <input class="calc-contact-field" type="tel" placeholder="Phone number" />
+          <button class="calc-contact-btn" onclick="handleContactSubmit(this)">Request a callback</button>
+        </div>
+      </aside>
+
+      <!-- Widget -->
+      <div class="calc-iframe-wrap">
+          <iframe class="VisiCalcClass" id="Stamp_Duty_Calculator" data-src="https://www.visionabacus.net/Tools/B3/SuiteA/Z200/MFAA/Stamp_Duty_Calculator/BlueGreen" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Other Calculators -->
+<section class="other-calcs">
+  <div class="container">
+    <h2>Other calculators</h2>
+    <div class="other-calcs-grid">
+      <a class="other-calc-card" href="borrowing-power.html">
+        <div class="other-calc-icon"><iconify-icon icon="solar:wallet-money-linear" width="22"></iconify-icon></div>
+        <div class="other-calc-name">Borrowing Power</div>
+        <div class="other-calc-desc">How much can you borrow?</div>
+        <span class="other-calc-link">Calculate →</span>
+      </a>
+      <a class="other-calc-card" href="mortgage-repayments.html">
+        <div class="other-calc-icon"><iconify-icon icon="solar:calculator-linear" width="22"></iconify-icon></div>
+        <div class="other-calc-name">Mortgage Repayments</div>
+        <div class="other-calc-desc">Estimate monthly payments</div>
+        <span class="other-calc-link">Calculate →</span>
+      </a>
+      <a class="other-calc-card" href="extra-repayments.html">
+        <div class="other-calc-icon"><iconify-icon icon="solar:graph-up-linear" width="22"></iconify-icon></div>
+        <div class="other-calc-name">Extra Repayments</div>
+        <div class="other-calc-desc">Pay off your loan faster</div>
+        <span class="other-calc-link">Calculate →</span>
+      </a>
+      <a class="other-calc-card" href="loan-offset.html">
+        <div class="other-calc-icon"><iconify-icon icon="solar:card-transfer-linear" width="22"></iconify-icon></div>
+        <div class="other-calc-name">Loan Offset</div>
+        <div class="other-calc-desc">See your offset savings</div>
+        <span class="other-calc-link">Calculate →</span>
+      </a>
+      <a class="other-calc-card" href="comparison-rate.html">
+        <div class="other-calc-icon"><iconify-icon icon="solar:chart-2-linear" width="22"></iconify-icon></div>
+        <div class="other-calc-name">Comparison Rate</div>
+        <div class="other-calc-desc">Find the true cost of a loan</div>
+        <span class="other-calc-link">Calculate →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../smartmovefinanceemblem.png" alt="Smartmove Finance" style="height:60px; width:auto; filter:brightness(0) invert(1);" />
+        </div>
+        <p>Independent mortgage brokers helping Australians make smarter property finance decisions since 2015.</p>
+      </div>
+
+      <div class="footer-links-row">
+        <ul>
+          <li><a href="../#services">Services</a></li>
+          <li><a href="../#why">About Us</a></li>
+          <li><a href="../#testimonials">Reviews</a></li>
+          <li><a href="../calculators/borrowing-power.html">Loan Calculators</a></li>
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../referrers.html">Referrers</a></li>
+          <li><a href="../#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-form-card">
+        <h4>Quick Contact</h4>
+        <p>Leave your details and a broker will reach out shortly.</p>
+        <form class="footer-form" onsubmit="handleSubmit(event)">
+          <input type="text" placeholder="Your name" required />
+          <input type="email" placeholder="Email address" required />
+          <input type="tel" placeholder="Phone number" required />
+          <select required>
+            <option value="">What do you need help with?</option>
+            <option>Buying my first home</option>
+            <option>Refinancing</option>
+            <option>Investment property</option>
+            <option>Construction finance</option>
+            <option>Borrowing power review</option>
+            <option>Other</option>
+          </select>
+          <textarea placeholder="Brief message"></textarea>
+          <button type="submit" class="btn btn-white" style="width:100%; text-align:center;">Request a Call Back</button>
+          <p class="footer-form-note">Your details stay private and are only used to respond to your enquiry.</p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      Smartmove Finance Pty Ltd is an authorised credit representative of [Aggregator Name] (Australian Credit Licence No. XXXXXX). MFAA member. Information on this website is general in nature and does not constitute personal financial or credit advice.
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Smartmove Finance Pty Ltd. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="../privacy-policy.html">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+function handleSubmit(e) { e.preventDefault(); const btn = e.target.querySelector('button[type=\"submit\"]'); if (!btn) return; btn.textContent = 'Enquiry sent. We will be in touch soon'; btn.style.background = '#3aaea0'; btn.disabled = true; }
+function handleContactSubmit(btn) {
+  btn.textContent = "Sent! We'll be in touch soon.";
+  btn.style.background = 'var(--teal)';
+  btn.disabled = true;
+}
+window.addEventListener('message', function(e) {
+  document.querySelectorAll('.VisiCalcClass').forEach(function(iframe) {
+    try {
+      if (e.source === iframe.contentWindow) {
+        var h = typeof e.data === 'number' ? e.data : parseInt(e.data);
+        if (h && h > 100) iframe.style.height = h + 'px';
+      }
+    } catch(err) {}
+  });
+});
+</script>
+<script>
+  (function() {
+    var iframes = document.querySelectorAll('iframe.VisiCalcClass[data-src]');
+    if (!iframes.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          el.src = el.dataset.src;
+          observer.unobserve(el);
+        }
+      });
+    }, { rootMargin: '200px' });
+    iframes.forEach(function(el) { observer.observe(el); });
+  })();
+</script>
+</body>
+</html>
