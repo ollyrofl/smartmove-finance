@@ -1094,6 +1094,9 @@
       font-weight: 700;
       color: var(--navy);
     }
+    .testimonials-carousel {
+      position: relative;
+    }
     .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
     .testimonial-card {
       padding: 40px 36px;
@@ -1133,6 +1136,25 @@
     .meta-name { font-size: .8rem; font-weight: 500; color: var(--navy); }
     .meta-loc { font-size: .72rem; color: var(--mid); }
     .stars { color: var(--teal); font-size: .75rem; letter-spacing: 2px; margin-bottom: 4px; opacity: .8; }
+    .testimonials-dots {
+      display: none;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .testimonials-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(15, 90, 83, 0.18);
+      padding: 0;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .testimonials-dot.is-active {
+      background: var(--teal);
+      transform: scale(1.08);
+    }
 
     /* ── CTA ── */
     .cta-band {
@@ -1569,6 +1591,36 @@
         flex-wrap: wrap;
         gap: 14px 18px;
       }
+      .testimonials-carousel {
+        overflow: visible;
+      }
+      .testimonials-grid {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        border: none;
+        border-radius: 0;
+        scrollbar-width: none;
+      }
+      .testimonials-grid::-webkit-scrollbar {
+        display: none;
+      }
+      .testimonial-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        scroll-snap-align: start;
+        background: rgba(255,255,255,0.88);
+      }
+      .testimonial-card:last-child {
+        border-right: 1px solid var(--border);
+      }
+      .testimonials-dots {
+        display: flex;
+      }
     }
 
     @media (max-width: 640px) {
@@ -1912,7 +1964,7 @@
       <div class="service-item">
         <div class="service-num">04</div>
         <h3>Construction Loans</h3>
-        <p>Wanting to build your dream home? We provide structured construction finance that supports progress payments, builder timelines, and efficient approvals.</p>
+        <p>Wanting to build your dream home or planning a Knock-Down-Rebuild? We provide structured construction finance that supports progress payments, builder timelines, Knock-Down-Rebuild projects, and efficient approvals.</p>
 
       </div>
       <div class="service-item">
@@ -2183,42 +2235,49 @@
       <span class="label-tag">Client Reviews</span>
       <h2 class="testimonials-h2">What our clients say</h2>
     </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="quote-mark">"</div>
-        <div class="stars">★★★★★</div>
-        <blockquote>Smartmove Finance made buying our first home so much less daunting. They found us a rate 0.6% lower than what our own bank offered and handled everything professionally.</blockquote>
-        <div class="testimonial-meta">
-          <div class="meta-avatar">JL</div>
-          <div>
-            <div class="meta-name">James & Lucy</div>
-            <div class="meta-loc">First Home Buyers · Sydney</div>
+    <div class="testimonials-carousel">
+      <div class="testimonials-grid" id="testimonialsCarousel">
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <div class="stars">★★★★★</div>
+          <blockquote>Smartmove Finance made buying our first home so much less daunting. They found us a rate 0.6% lower than what our own bank offered and handled everything professionally.</blockquote>
+          <div class="testimonial-meta">
+            <div class="meta-avatar">JL</div>
+            <div>
+              <div class="meta-name">James & Lucy</div>
+              <div class="meta-loc">First Home Buyers · Sydney</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <div class="stars">★★★★★</div>
+          <blockquote>I'd been putting off refinancing for years thinking it was too complex. The team sorted everything within a week and I'm saving over $400 a month. Exceptional service.</blockquote>
+          <div class="testimonial-meta">
+            <div class="meta-avatar">MR</div>
+            <div>
+              <div class="meta-name">Michelle R.</div>
+              <div class="meta-loc">Refinance Client · Melbourne</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <div class="stars">★★★★★</div>
+          <blockquote>As a self-employed business owner I thought getting approved would be near impossible. Smartmove found a lender who genuinely understood my situation. Highly recommend.</blockquote>
+          <div class="testimonial-meta">
+            <div class="meta-avatar">DK</div>
+            <div>
+              <div class="meta-name">David K.</div>
+              <div class="meta-loc">Self-Employed · Brisbane</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="quote-mark">"</div>
-        <div class="stars">★★★★★</div>
-        <blockquote>I'd been putting off refinancing for years thinking it was too complex. The team sorted everything within a week and I'm saving over $400 a month. Exceptional service.</blockquote>
-        <div class="testimonial-meta">
-          <div class="meta-avatar">MR</div>
-          <div>
-            <div class="meta-name">Michelle R.</div>
-            <div class="meta-loc">Refinance Client · Melbourne</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="quote-mark">"</div>
-        <div class="stars">★★★★★</div>
-        <blockquote>As a self-employed business owner I thought getting approved would be near impossible. Smartmove found a lender who genuinely understood my situation. Highly recommend.</blockquote>
-        <div class="testimonial-meta">
-          <div class="meta-avatar">DK</div>
-          <div>
-            <div class="meta-name">David K.</div>
-            <div class="meta-loc">Self-Employed · Brisbane</div>
-          </div>
-        </div>
+      <div class="testimonials-dots" aria-label="Review slides">
+        <button class="testimonials-dot is-active" type="button" aria-label="Show review 1"></button>
+        <button class="testimonials-dot" type="button" aria-label="Show review 2"></button>
+        <button class="testimonials-dot" type="button" aria-label="Show review 3"></button>
       </div>
     </div>
   </div>
@@ -2387,7 +2446,7 @@
       </div>
     </div>
     <div class="footer-disclaimer">
-      Smartmove Finance Pty Ltd is an authorised credit representative of [Aggregator Name] (Australian Credit Licence No. XXXXXX). MFAA member. Information on this website is general in nature and does not constitute personal financial or credit advice.
+      Smartmove Finance is an authorised credit representative (390870) of Port Group Pty Ltd (Australian Credit Licence 389460). Information on this website is general in nature and does not constitute personal financial or credit advice.
     </div>
     <div class="footer-bottom">
       <span>© 2026 Smartmove Finance Pty Ltd. All rights reserved.</span>
@@ -2434,6 +2493,36 @@
     btn.style.background = '#3aaea0';
     btn.disabled = true;
   }
+  function initTestimonialsCarousel() {
+    const track = document.getElementById('testimonialsCarousel');
+    if (!track) return;
+    const dots = Array.from(document.querySelectorAll('.testimonials-dot'));
+    const cards = Array.from(track.querySelectorAll('.testimonial-card'));
+    if (!dots.length || !cards.length) return;
+
+    const updateActiveDot = () => {
+      const offset = track.scrollLeft;
+      const width = track.clientWidth || 1;
+      const index = Math.round(offset / width);
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === index);
+      });
+    };
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        track.scrollTo({
+          left: track.clientWidth * index,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    track.addEventListener('scroll', updateActiveDot, { passive: true });
+    window.addEventListener('resize', updateActiveDot);
+    updateActiveDot();
+  }
+  initTestimonialsCarousel();
 
   // Fade in progress bar on load
   window.addEventListener('load', () => {

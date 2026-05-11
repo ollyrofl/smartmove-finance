@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smartmove Finance | Gray Usage Examples</title>
+  <meta name="description" content="Examples of how Smartmove Finance could use the gray brand color #464B4C across the website." />
+  <link rel="icon" type="image/png" href="smartmovefinanceemblem.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #1e7a70;
+      --teal-deep: #165f57;
+      --teal-soft: #3aaea0;
+      --stone: #464B4C;
+      --stone-soft: #72797a;
+      --stone-pale: #eef1f1;
+      --off: #f4faf9;
+      --white: #ffffff;
+      --border: rgba(70, 75, 76, 0.14);
+      --border-strong: rgba(70, 75, 76, 0.22);
+      --shadow: 0 20px 60px rgba(32, 42, 43, 0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sora', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(58, 174, 160, 0.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f7fbfb 100%);
+      color: var(--teal);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+    .eyebrow {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 600;
+      color: var(--stone-soft);
+      display: block;
+      margin-bottom: 16px;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+    p { color: var(--stone); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: .18s ease;
+    }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: var(--teal-deep); }
+    .btn-stone { background: var(--stone); color: #fff; }
+    .btn-stone:hover { background: #373b3c; }
+    .btn-outline-stone { border-color: rgba(70,75,76,.24); color: var(--stone); background: rgba(255,255,255,.72); }
+    .btn-outline-stone:hover { background: var(--stone); color: #fff; border-color: var(--stone); }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(70,75,76,.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 18px;
+    }
+    .nav-brand img { height: 38px; width: auto; display: block; }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--stone);
+    }
+    .nav-links a {
+      padding: 12px 14px;
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+    }
+    .nav-links a:hover,
+    .nav-links .is-active {
+      background: rgba(70,75,76,.08);
+    }
+
+    .hero {
+      padding: 88px 0 54px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+    .hero-copy h1 {
+      font-size: clamp(3rem, 6.1vw, 5.9rem);
+      max-width: 9ch;
+      color: var(--teal);
+      margin-bottom: 22px;
+    }
+    .hero-copy .lead {
+      max-width: 56ch;
+      font-size: 1.08rem;
+      color: var(--stone);
+      margin-bottom: 28px;
+    }
+    .hero-copy .lead strong { color: var(--stone); }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .preview-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(249,251,251,.96) 100%);
+      border: 1px solid rgba(70,75,76,.1);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .preview-card-header {
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(70,75,76,.08);
+      background: rgba(70,75,76,.04);
+    }
+    .preview-card-header h3 {
+      font-size: 1rem;
+      color: var(--stone);
+    }
+    .preview-card-body { padding: 24px; }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .swatch {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(70,75,76,.08);
+      background: #fff;
+    }
+    .swatch-chip {
+      height: 110px;
+      border-bottom: 1px solid rgba(70,75,76,.08);
+    }
+    .swatch-meta {
+      padding: 16px;
+    }
+    .swatch-meta h4 {
+      font-size: .95rem;
+      color: var(--stone);
+      margin-bottom: 4px;
+    }
+    .swatch-meta p {
+      font-size: .84rem;
+      color: var(--stone-soft);
+    }
+
+    section {
+      padding: 26px 0 72px;
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .strategy-card {
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(70,75,76,.1);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(37, 45, 46, 0.06);
+    }
+    .strategy-card h3 {
+      font-size: 1.42rem;
+      color: var(--stone);
+      margin-bottom: 12px;
+    }
+    .strategy-card p {
+      font-size: .97rem;
+      color: var(--stone);
+      margin-bottom: 18px;
+    }
+    .strategy-points {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .strategy-points li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--stone);
+      font-size: .92rem;
+    }
+    .strategy-points li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal-soft);
+      position: absolute;
+      left: 0;
+      top: .55em;
+    }
+
+    .usage-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+    }
+    .usage-surface {
+      background: #fff;
+      border-radius: 26px;
+      border: 1px solid rgba(70,75,76,.08);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .usage-demo {
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(70,75,76,.97) 0%, rgba(54,58,59,.98) 100%);
+      color: #fff;
+    }
+    .usage-demo .eyebrow { color: rgba(255,255,255,.62); }
+    .usage-demo h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      max-width: 11ch;
+      margin-bottom: 16px;
+    }
+    .usage-demo p {
+      color: rgba(255,255,255,.82);
+      max-width: 46ch;
+      margin-bottom: 22px;
+    }
+    .usage-boxes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .usage-box {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .usage-box h4 {
+      font-size: .92rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .usage-box p {
+      margin: 0;
+      font-size: .86rem;
+      color: rgba(255,255,255,.72);
+    }
+    .usage-notes {
+      padding: 34px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+    .note-card {
+      padding: 20px 22px;
+      border-radius: 18px;
+      background: var(--stone-pale);
+      border: 1px solid rgba(70,75,76,.08);
+    }
+    .note-card h4 {
+      color: var(--stone);
+      font-size: .92rem;
+      margin-bottom: 8px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .note-card p {
+      font-size: .95rem;
+      color: var(--stone);
+    }
+
+    .components-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    .component-panel {
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid rgba(70,75,76,.08);
+      padding: 26px;
+      box-shadow: 0 16px 48px rgba(38, 44, 45, 0.06);
+    }
+    .component-panel h3 {
+      font-size: 1.22rem;
+      color: var(--stone);
+      margin-bottom: 8px;
+    }
+    .component-panel > p {
+      margin-bottom: 20px;
+      color: var(--stone-soft);
+    }
+    .service-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .service-mini {
+      border: 1px solid rgba(70,75,76,.12);
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.9) 0%, rgba(245,247,247,.94) 100%);
+    }
+    .service-mini .mini-kicker {
+      font-size: .72rem;
+      color: var(--teal-soft);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: 8px;
+    }
+    .service-mini h4 {
+      color: var(--stone);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .service-mini p {
+      font-size: .88rem;
+      color: var(--stone);
+    }
+
+    .testimonial-dark {
+      background: linear-gradient(180deg, rgba(70,75,76,.98) 0%, rgba(56,60,61,.98) 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonial-dark::after {
+      content: '';
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(58,174,160,.16);
+      filter: blur(4px);
+    }
+    .testimonial-dark .stars {
+      color: #c5f3ec;
+      letter-spacing: .24em;
+      font-size: .78rem;
+      margin-bottom: 18px;
+    }
+    .testimonial-dark blockquote {
+      color: rgba(255,255,255,.92);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .testimonial-dark .meta {
+      color: rgba(255,255,255,.72);
+      font-size: .85rem;
+    }
+
+    .footer-example {
+      margin-top: 8px;
+      padding: 34px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #2d3132 0%, #3b4041 100%);
+      color: #fff;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+    .footer-brand img {
+      height: 42px;
+      width: auto;
+      margin-bottom: 12px;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,.72);
+      max-width: 36ch;
+      font-size: .94rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 26px;
+      color: rgba(255,255,255,.9);
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .footer-disclaimer {
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.56);
+      font-size: .8rem;
+      max-width: 110ch;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .usage-grid,
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+      .strategy-grid,
+      .components-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .container { padding: 0 20px; }
+      .swatches,
+      .service-mini-grid,
+      .usage-boxes {
+        grid-template-columns: 1fr 1fr;
+      }
+      .nav-inner {
+        min-height: 68px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero {
+        padding-top: 56px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .swatches,
+      .usage-boxes,
+      .service-mini-grid {
+        grid-template-columns: 1fr;
+      }
+      section {
+        padding-bottom: 56px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="nav-inner">
+        <a class="nav-brand" href="index.html" aria-label="Back to homepage">
+          <img src="smartmovefinancelogo.png" alt="Smartmove Finance" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="#palette">Palette</a></li>
+          <li><a href="#strategies">Strategies</a></li>
+          <li><a class="is-active" href="#examples">Examples</a></li>
+          <li><a href="#footer">Footer Use</a></li>
+        </ul>
+        <a class="btn btn-stone" href="index.html">Back To Site</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Color Study</span>
+          <h1>How `#464B4C` could elevate the brand.</h1>
+          <p class="lead">This gray works best as a <strong>premium balancing color</strong>, not as a replacement for your teal. I’d use it to make the site feel more grounded, more polished, and a little less one-note, while keeping teal as the main signature.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#examples">Show Me Examples</a>
+            <a class="btn btn-outline-stone" href="index.html">Compare With Live Homepage</a>
+          </div>
+        </div>
+
+        <div class="preview-card">
+          <div class="preview-card-header">
+            <h3>Recommended Role For The Gray</h3>
+            <span class="eyebrow" style="margin:0; color:var(--stone);">Secondary Anchor</span>
+          </div>
+          <div class="preview-card-body">
+            <p style="margin-bottom:18px;">Rather than turning the whole site gray, I’d use `#464B4C` in a few deliberate places where it improves contrast and gives the teal more room to breathe.</p>
+            <div class="swatches">
+              <div class="swatch">
+                <div class="swatch-chip" style="background:#1e7a70;"></div>
+                <div class="swatch-meta">
+                  <h4>Primary Teal</h4>
+                  <p>Main brand driver</p>
+                </div>
+              </div>
+              <div class="swatch">
+                <div class="swatch-chip" style="background:#3aaea0;"></div>
+                <div class="swatch-meta">
+                  <h4>Accent Teal</h4>
+                  <p>Highlights and energy</p>
+                </div>
+              </div>
+              <div class="swatch">
+                <div class="swatch-chip" style="background:#464B4C;"></div>
+                <div class="swatch-meta">
+                  <h4>New Gray</h4>
+                  <p>Depth and premium contrast</p>
+                </div>
+              </div>
+              <div class="swatch">
+                <div class="swatch-chip" style="background:#eef1f1;"></div>
+                <div class="swatch-meta">
+                  <h4>Pale Gray</h4>
+                  <p>Soft supporting surface</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="strategies">
+    <div class="container">
+      <span class="eyebrow">How I’d Use It</span>
+      <div class="strategy-grid">
+        <article class="strategy-card">
+          <h3>1. Stronger Secondary Text</h3>
+          <p>Use the gray for body copy, subtitles, and longer descriptive text. That keeps teal for headings and CTAs, and immediately makes the site feel more balanced.</p>
+          <ul class="strategy-points">
+            <li>Paragraph text</li>
+            <li>Form helper text</li>
+            <li>Footer copy and legal text</li>
+          </ul>
+        </article>
+        <article class="strategy-card">
+          <h3>2. Premium Dark Surfaces</h3>
+          <p>The gray works beautifully for testimonial cards, stat panels, dropdown backgrounds, and footer areas where pure teal can feel too bright.</p>
+          <ul class="strategy-points">
+            <li>Dark card backgrounds</li>
+            <li>Secondary CTA buttons</li>
+            <li>Hero or content overlays</li>
+          </ul>
+        </article>
+        <article class="strategy-card">
+          <h3>3. Cleaner Neutrals</h3>
+          <p>Create a pale gray family from it for borders, chips, and soft backgrounds. That gives the site a more cohesive neutral system than relying mostly on teal tints.</p>
+          <ul class="strategy-points">
+            <li>Dividers and outlines</li>
+            <li>Input fields and cards</li>
+            <li>Muted label treatments</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="examples">
+    <div class="container">
+      <span class="eyebrow">Applied Examples</span>
+      <div class="usage-grid">
+        <div class="usage-surface">
+          <div class="usage-demo">
+            <span class="eyebrow">Example A</span>
+            <h2>Gray as the premium support color.</h2>
+            <p>This is the direction I’d recommend most. Teal still owns the brand, but the gray takes over the supporting structure, making the site feel more refined.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#">Speak To A Broker</a>
+              <a class="btn btn-outline-stone" href="#">See Loan Options</a>
+            </div>
+            <div class="usage-boxes">
+              <div class="usage-box">
+                <h4>Great For</h4>
+                <p>Body copy, dropdowns, legal text, footers, secondary buttons.</p>
+              </div>
+              <div class="usage-box">
+                <h4>Avoid Overusing</h4>
+                <p>Primary hero headings and core CTA color, where teal should still lead.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="usage-notes">
+          <div class="note-card">
+            <h4>Best Immediate Change</h4>
+            <p>Shift more paragraph text from teal into this gray. That’s the fastest way to make the site feel calmer and more premium.</p>
+          </div>
+          <div class="note-card">
+            <h4>Best Visual Upgrade</h4>
+            <p>Use gray for darker content panels like testimonials, dropdowns, footer blocks, and “why us” style cards.</p>
+          </div>
+          <div class="note-card">
+            <h4>Best Supporting System</h4>
+            <p>Create pale gray borders and backgrounds from it so cards, forms, and dividers feel more cohesive throughout the site.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="components-grid">
+        <article class="component-panel">
+          <h3>Services Cards With Gray Headings</h3>
+          <p>This keeps the teal for labels and accents, while the service titles and body copy feel more grounded.</p>
+          <div class="service-mini-grid">
+            <div class="service-mini">
+              <div class="mini-kicker">Service</div>
+              <h4>First Home Buyers</h4>
+              <p>Supportive, clear guidance using gray-led text and cleaner contrast.</p>
+            </div>
+            <div class="service-mini">
+              <div class="mini-kicker">Service</div>
+              <h4>Construction Loans</h4>
+              <p>The gray gives longer copy a stronger editorial feel without fighting the teal.</p>
+            </div>
+            <div class="service-mini">
+              <div class="mini-kicker">Service</div>
+              <h4>Investment Loans</h4>
+              <p>Useful where the site needs to feel more strategic and sophisticated.</p>
+            </div>
+            <div class="service-mini">
+              <div class="mini-kicker">Service</div>
+              <h4>Self-Employed</h4>
+              <p>Helps denser financial messaging feel more readable and less color-heavy.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="component-panel">
+          <h3>Testimonials on Gray</h3>
+          <p>This is one of the strongest use cases. The teal highlights feel sharper when they sit on a darker neutral base.</p>
+          <div class="testimonial-dark">
+            <div class="stars">★★★★★</div>
+            <blockquote>“This feels more premium straight away. The teal becomes the accent instead of competing with every other element on the page.”</blockquote>
+            <div class="meta">Sample client review styling using `#464B4C` as the card background.</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="footer">
+    <div class="container">
+      <span class="eyebrow">Footer Direction</span>
+      <div class="footer-example">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img src="smartmovefinancelogo.png" alt="Smartmove Finance" />
+            <p>The gray is especially effective in the footer because it feels more professional and makes the white text easier to read than teal-heavy treatments.</p>
+          </div>
+          <div class="footer-links">
+            <a href="#">Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Reviews</a>
+            <a href="#">Calculators</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Referrers</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <div class="footer-disclaimer">
+          Recommended takeaway: use `#464B4C` most heavily in text, darker panels, and structured neutral surfaces. That gives Smartmove a more sophisticated base while preserving teal as the recognisable signature color.
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
